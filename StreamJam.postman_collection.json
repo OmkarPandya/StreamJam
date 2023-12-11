@@ -1,0 +1,292 @@
+{
+	"info": {
+		"_postman_id": "7a707103-d548-40de-9f9e-f36c17ab0a88",
+		"name": "StreamJam",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27493396"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Omkar\",\r\n    \"email\": \"omkar@pandya.com\",\r\n    \"password\": \"OmkarPandya\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5002/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"omkar@pandya.com\",\r\n    \"password\": \"OmkarPandya\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5002/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Followed Channels",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTY0ODc4ZTFjODAzZDI1YTdjMzFkYTkiLCJlbWFpbCI6Im9ta2FyQHBhbmR5YS5jb20iLCJpYXQiOjE3MDEwODcxMzYsImV4cCI6MTcwMTExNTkzNn0.FgVNemEIL_0XRpEHkB-cBMuPv94SmJ1oxauyFpcq-Ik",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"channelId\": \"6548c19b9674b807eee3c157\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5002/api/channels/followed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"channels",
+						"followed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Channels",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5002/api/channels/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"channels",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Follow Channel",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTY0ODc4ZTFjODAzZDI1YTdjMzFkYTkiLCJlbWFpbCI6Im9ta2FyQHBhbmR5YS5jb20iLCJpYXQiOjE3MDEwODcxMzYsImV4cCI6MTcwMTExNTkzNn0.FgVNemEIL_0XRpEHkB-cBMuPv94SmJ1oxauyFpcq-Ik",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"channelId\": \"655f3c7c4154cb7e13828f3f\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5002/api/channels/follow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"channels",
+						"follow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Channel Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5002/api/channels/:channelId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"channels",
+						":channelId"
+					],
+					"variable": [
+						{
+							"key": "channelId",
+							"value": "655f3c7c4154cb7e13828f3f"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Channel Settings",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTY0ODc4ZTFjODAzZDI1YTdjMzFkYTkiLCJlbWFpbCI6Im9ta2FyQHBhbmR5YS5jb20iLCJpYXQiOjE3MDEwODcxMzYsImV4cCI6MTcwMTExNTkzNn0.FgVNemEIL_0XRpEHkB-cBMuPv94SmJ1oxauyFpcq-Ik",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5002/api/settings/channel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"settings",
+						"channel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set Channel Settings",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTY0ODc4ZTFjODAzZDI1YTdjMzFkYTkiLCJlbWFpbCI6Im9ta2FyQHBhbmR5YS5jb20iLCJpYXQiOjE3MDEwODcxMzYsImV4cCI6MTcwMTExNTkzNn0.FgVNemEIL_0XRpEHkB-cBMuPv94SmJ1oxauyFpcq-Ik",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Omkar\",\r\n    \"title\": \"New Channel\",\r\n    \"avatarUrl\": \"https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_.jpg\",\r\n    \"description\": \"This is new channel\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5002/api/settings/channel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"settings",
+						"channel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Password",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTY0ODc4ZTFjODAzZDI1YTdjMzFkYTkiLCJlbWFpbCI6Im9ta2FyQHBhbmR5YS5jb20iLCJpYXQiOjE3MDEwODcxMzYsImV4cCI6MTcwMTExNTkzNn0.FgVNemEIL_0XRpEHkB-cBMuPv94SmJ1oxauyFpcq-Ik",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\": \"OmkarPandya\",\r\n    \"newPassword\": \"PandyaOmkar\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5002/api/settings/password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"settings",
+						"password"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
