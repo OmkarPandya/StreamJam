@@ -14,22 +14,21 @@ export const Channels = ({ channels }) => {
 
   return (
     <div>
-      <div className={isLogged ? "m-left" : ""}>
+      <div className={isLogged ? "m-left text-rose-700 font-bold" : "text-rose-700"}>
         <p
           style={{
-            color: "Black",
             fontFamily: "Amatic SC, serif",
             fontSize: "25px",
-            marginTop: "20px",
+            
           }}
         >
           Discover
         </p>
 
-        <div className="row">
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-x-10 gap-y-10">
 
           {channels.map((c) => (
-            <div className="col-6" key={c.id} >
+            <div className="" key={c.id} >
             <ChannelCard
               
               id={c.id}

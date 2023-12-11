@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../../resources/images/logo.svg";
+import logo from "../../resources/images/logo.png";
 import { useUserDetails } from "../../shared/hooks";
 
 import "../dashboardPage.css";

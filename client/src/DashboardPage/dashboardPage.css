@@ -5,7 +5,7 @@
 }
 
 body {
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .dashboard-container {
@@ -55,7 +55,6 @@ body {
 
 .sidebar-container {
   backdrop-filter: blur(5px);
-  background-color: rgba(20, 20, 20, 0.5);
   position: absolute;
   height: calc(100vh - 50px);
   bottom: 0;
@@ -388,7 +387,6 @@ body {
   margin-top: 1rem;
   overflow-y: scroll;
   overflow-x: hidden;
-  scroll-behavior: auto;
   border-radius: 10px;
   margin-inline: 1rem;
   background-color: rgba(20, 20, 20, 0.7);
