@@ -17,7 +17,7 @@ export const Channels = ({ channels }) => {
       <div className={isLogged ? "m-left" : ""}>
         <p
           style={{
-            color: "White",
+            color: "Black",
             fontFamily: "Amatic SC, serif",
             fontSize: "25px",
             marginTop: "20px",
@@ -26,10 +26,12 @@ export const Channels = ({ channels }) => {
           Discover
         </p>
 
-        <div className="channels-container">
+        <div className="row">
+
           {channels.map((c) => (
+            <div className="col-6" key={c.id} >
             <ChannelCard
-              key={c.id}
+              
               id={c.id}
               title={c.title}
               username={c.username}
@@ -37,6 +39,7 @@ export const Channels = ({ channels }) => {
               avatarUrl={c.avatarUrl}
               navigateToChannelHandler={handleNavigateToChannel}
             />
+            </div>
           ))}
         </div>
       </div>

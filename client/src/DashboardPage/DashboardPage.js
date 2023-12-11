@@ -23,10 +23,12 @@ export const DashboardPage = () => {
   }
 
   return (
-    <div className="dashboard-container">
-      <Nav />
-      <Sidebar channels={followedChannels} />
+    <div className="dashboard-container row">
+      <div className="col-1">
+      <Sidebar channels={followedChannels} /></div>
+      <div className="col-11">
       <Content channels={allChannels} getChannels={getChannels} />
+      </div>
     </div>
   );
 };
