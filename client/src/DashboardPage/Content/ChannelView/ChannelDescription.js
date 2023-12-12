@@ -11,7 +11,7 @@ const FollowButton = ({ channelId, getChannels }) => {
   };
 
   return (
-    <button onClick={handleFollowChannel} className="channel-follow-button">
+    <button onClick={handleFollowChannel} className="channel-follow-button bg-pink-700 hover:bg-pink-500 hover:text-pink-900 hover:scale-105 transilition-transform hover:rounded-md">
       Follow
     </button>
   );
@@ -27,8 +27,8 @@ export const ChannelDescription = ({
   const { isLogged } = useUserDetails();
 
   return (
-    <div className="channel-description-container">
-      <span className="channel-description-title">
+    <div className="flex flex-col space-y-8">
+      <span className=" text-pink-700 font-bold text-3xl flex flex-row justify-between">
         {username}
         <span>
           {isLogged && (
@@ -40,9 +40,11 @@ export const ChannelDescription = ({
           )}
         </span>
       </span>
-      <span className="channel-description-subtitle">{title}</span>
-      <div className="channel-description-box">
-        <span className="channel-description">{description}</span>
+      <div className="flex flex-col bg-pink-400 rounded-md p-2">
+      <span className="font-semibold text-pink-900">{title}</span>
+      <div className="">
+        <span className="text-white">{description}</span>
+      </div>
       </div>
     </div>
   );

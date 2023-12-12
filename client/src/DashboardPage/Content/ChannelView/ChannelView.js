@@ -32,12 +32,12 @@ export const ChannelView = ({ getChannels }) => {
     <div
       className={isLogged ? "m-left channel-container" : "channel-container"}
     >
-      <div className="channel-video-description-section">
+      <div className="channel-video-description-section space-y-8">
         {channelDetails.isOnline ? (
           <Stream streamUrl={channelDetails.streamUrl} />
         ) : (
-          <div className="channel-offline-placeholder">
-            <span>Stream is offline</span>
+          <div className="channel-offline-placeholder items-center text-center border text-pink-500  border-pink-900 shadow-xl bg-rose-50 h-[400px] p-auto rounded-lg">
+            <span>Stream is offline :(</span>
           </div>
         )}
         <ChannelDescription
