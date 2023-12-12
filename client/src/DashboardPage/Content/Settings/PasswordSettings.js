@@ -70,7 +70,7 @@ export const PasswordSettings = () => {
   };
 
   return (
-      <form className="settings-form-password">
+      <form className="settings-form-password bg-rose-50 text-pink-700 rounded-md shadow-lg">
         {inputs.map((input) => (
           <Input
             key={input.field}
@@ -82,10 +82,11 @@ export const PasswordSettings = () => {
             showErrorMessage={formState[input.field].showError}
             validationMessage={input.validationMessage}
             type={input.type}
+            className="text-pink-700 "
           />
         ))}
         <center>
-          <button disabled={isSubmitButtonDisabled} onClick={handleFormSubmit}>
+          <button disabled={isSubmitButtonDisabled} onClick={handleFormSubmit} className="text-white bg-pink-700">
             Save changes
           </button>
         </center>

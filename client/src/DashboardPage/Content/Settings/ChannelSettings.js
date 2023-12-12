@@ -122,7 +122,7 @@ export const ChannelSettings = ({ settings, saveSettings }) => {
     !formState.avatarUrl.isValid;
 
   return (
-    <form className="settings-form">
+    <form className="settings-form text-pink-700 shadow-md bg-rose-50">
       {inputs.map((input) => (
         <Input
           key={input.field}

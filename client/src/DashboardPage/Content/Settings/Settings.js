@@ -21,7 +21,7 @@ export const Settings = () => {
   }
 
   return (
-    <div className="m-left settings-container">
+    <div className="m-left settings-container text-pink-700 font-bold">
       <div style={{ width: "50%", float: "right" }}>
         <span>Change Password</span>
         <br />
