@@ -16,7 +16,7 @@ export const Channels = ({ channels }) => {
     <div>
       <div className={isLogged ? "m-left mr-28 text-rose-700 font-bold" : "text-rose-700"}>
         <p
-        className="my-3"
+        className="my-5"
           style={{
             fontFamily: "Amatic SC, serif",
             fontSize: "35px",
