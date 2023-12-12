@@ -9,8 +9,8 @@ body {
 }
 
 .dashboard-container {
-  min-width: 100vw;
-  min-height: 100vh;
+  min-width: 20vw;
+  min-height: 65vh;
   align-items: center;
 }
 
@@ -147,7 +147,7 @@ body {
   color: #000;
 }
 
-.channels-card {
+/* .channels-card {
   backdrop-filter: blur(5px);
   background-color: rgba(20, 20, 20, 0.5);
   border-radius: 10px;
@@ -158,6 +158,16 @@ body {
   overflow: hidden;
   margin-right: 20px;
   max-width: 27rem;
+} */
+
+.channels-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: rgba(239, 101, 149, 0.7); /* Transparent pink background */
+  cursor: pointer;
 }
 
 .channels-card:hover {
@@ -165,6 +175,9 @@ body {
 }
 
 .channels-avatar-container {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   height: 75%;
   padding: 3%;
 }
@@ -175,10 +188,12 @@ body {
 
 .channels-card-content {
   display: flex;
-  padding-top: 1rem;
+ 
   flex-direction: column;
   padding-inline: 0.5rem;
   height: 25%;
+  padding: 10px;
+  box-sizing: border-box;
 }
 .channels-card-content * {
   flex-grow: 1;
@@ -189,7 +204,9 @@ body {
 }
 
 .channels-card-title {
-  font-size: 18px;
+  font-weight: bold;
+  font-size: 1.2em;
+  display: block;
   margin-top: 5px;
   color: #ffffff;
   font-weight: bold;
@@ -197,10 +214,16 @@ body {
 }
 
 .channels-card-text {
-  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  font-size: 0.9em;
   display: flex;
   color: #ffffff;
   font-style: italic;
+}
+.rounded-corners {
+  border-radius: 8px;
 }
 
 .channels-card-text:last-child {
@@ -216,6 +239,22 @@ body {
   color: white;
   text-align: left;
 }
+
+/* Add this to your existing dashboardPage.css file */
+
+.channels-avatar-container {
+  width: 100%;
+  height: 220px; /* Set the desired fixed height for the images */
+  overflow: hidden;
+}
+
+.channels-avatar-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire container */
+}
+
+/* ... (other styles remain the same) */
 
 .settings-form {
   backdrop-filter: blur(5px);

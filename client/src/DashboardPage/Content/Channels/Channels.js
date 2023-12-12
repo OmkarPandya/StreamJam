@@ -14,11 +14,12 @@ export const Channels = ({ channels }) => {
 
   return (
     <div>
-      <div className={isLogged ? "m-left text-rose-700 font-bold" : "text-rose-700"}>
+      <div className={isLogged ? "m-left mr-28 text-rose-700 font-bold" : "text-rose-700"}>
         <p
+        className="my-3"
           style={{
             fontFamily: "Amatic SC, serif",
-            fontSize: "25px",
+            fontSize: "35px",
             
           }}
         >

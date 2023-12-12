@@ -18,6 +18,18 @@ export const ChannelCard = ({
   const handleNavigate = () => {
     navigateToChannelHandler(id);
   };
+  const ChannelAvatar = ({ url }) => {
+    return (
+      <div className="channels-avatar-container">
+        <img
+          src={url || imageUrl}
+          height={"100%"}
+          width={"100%"}
+          className="rounded-corners"
+        />
+      </div>
+    );
+  };
 
   return (
 
@@ -25,21 +37,13 @@ export const ChannelCard = ({
 
 
 
-<div onClick={handleNavigate} class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow ">
-<img
-        src={avatarUrl || imageUrl}
-        class="p-8 rounded-t-lg"
-      />
-    
-    <div class="px-5 pb-5">
-        <a href="#">
-            <h5 class="text-xl font-semibold tracking-tight text-gray-900">{title}</h5>
-        </a>
-    
-        <div class="flex items-center mt-2.5 mb-5 justify-between">
-            <span class="text-3xl  text-gray-900">{username}</span>
-            <p href="#">
-            <span
+<div className="channels-card" onClick={handleNavigate}>
+      <ChannelAvatar url={avatarUrl} />
+      <div className="channels-card-content">
+        <span className="channels-card-title">{title}</span>
+        <div className="channels-card-text">
+          <span style={{ textAlign: "left" }}>{username}</span>
+          <span
             style={{
               color: isOnline ? "green" : "red",
               textAlign: "right",
@@ -48,12 +52,9 @@ export const ChannelCard = ({
           >
             {isOnline ? "Online" : "Offline"}
           </span>
-            </p>
         </div>
+      </div>
     </div>
-</div>
-
-
 
 
 

@@ -11,7 +11,7 @@ const NavButton = ({ text, onClickHandler }) => {
   return (
     
     <a href="#" onClick={onClickHandler} class="flex">
-    <span class="text-xl font-semibold whitespace-nowrap text-pink-500 px-4">{text}</span>
+    <span class="text-xl font-semibold whitespace-nowrap text-pink-500">{text}</span>
  </a>    
   );
 };
@@ -64,40 +64,43 @@ export const Sidebar = ({ channels }) => {
       className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-white border border-pink-200 shadow-lg shadow-pink-200 "
       aria-label="Sidebar"
     >
-      <div className="h-full flex flex-col justify-between py-4 overflow-y-auto items-center space-y-5">
-        <div className="flex flex-col space-y-5 w-full">
-          <div  className="flex items-center border-b-2 border-pink-200 px-4">
-            <img src={logo} className="h-6 sm:h-7" alt="Logo" />
-            <span className="text-xl font-bold whitespace-nowrap text-pink-500 ">StreamJam</span>
+      <div className="h-full flex flex-col justify-between py-2 overflow-y-auto items-center space-y-2">
+        <div className="flex flex-col space-y-2 ">
+          <div  className="flex flex-col items-center border-b-2 border-pink-200 px-4">
+            <img src={logo} className=" sm:h-7" alt="Logo" />
+            <span className="flex flex-col my-2 items-center text-xl font-bold whitespace-nowrap text-pink-500 ">StreamJam</span>
           </div>
-          <ul className="space-y-5 font-medium ">
-            <li className="flex border-b-2 border-pink-200">
-              {!isLogged ? (
-                <NavButton
-                  className="flex text-black-900 rounded-lg group"
-                  text="Login"
-                  onClickHandler={handleNavigateToAuth}
-                />
-              ) : (
-                <div className="flex items-center">
-                  <NavButton
-                    className="flex rounded-lg text-pink-500 group"
-                    text={username}
-                    onClickHandler={handleNavigateToSettings}
-                  />
-                  <img
-                    src="https://cosmeticsbusiness.com/article-image-alias/vanilla-girl-beauty-is-already-the-2.jpeg" // Replace with the actual path
-                    alt="Profile"
-                    className="w-8 h-8 object-cover rounded-full ml-2"
-                  />
-                </div>
-              )}
-            </li>
+
+{isLogged ? (
+  <div onClickHandler={handleNavigateToSettings} class="flex flex-col items-center">
+  <img style={{borderRadius:"50%", width:"60%", marginBottom:"13px"}} src="https://w0.peakpx.com/wallpaper/209/892/HD-wallpaper-bear-pink.jpg">
+
+  </img>
+  <h1  class="text-xl font-bold">{username}</h1>
+  <p class="text-gray-700">{"Singer"}</p>
+ 
+</div>
+):(
+  <button onClickHandler={handleNavigateToAuth}>Login</button>
+)}
+
+
+          
+
+
+
+
+
+
+
+
+  <ul className="flex flex-col items-center space-y-5 font-medium ">
+            
 
             <span className="flex items-center text-pink-500 font-semibold group px-4">Followed Channels</span>
 
             {channels.map((channel) => (
-              <div key={channel.id} className="sidebar-list-item">
+              <div key={channel.id} className="flex flex-col items-center sidebar-list-item">
                 <li>
                   <a href="#" className="flex items-center px-2 py-2 text-pink-500 rounded-lg hover:bg-pink-500 hover:text-white group border border-gray-2">
                     <span className="flex-1 ms-3 whitespace-nowrap">{channel.username}</span>
@@ -113,15 +116,20 @@ export const Sidebar = ({ channels }) => {
                 </li>
               </div>
             ))}
-          </ul>
-        </div>
-
-        {/* Logout Button placed at the bottom */}
-        <NavButton
-          className="flex items-center px-2 text-gray-900 rounded-lg dark:text-white group mt-5"
+            <li style={{marginTop:"50%"}}>
+            <NavButton
+          className=""
           text="Logout"
           onClickHandler={handleLogout}
         />
+            </li>
+          </ul>
+          
+        </div>
+        
+
+        {/* Logout Button placed at the bottom */}
+       
       </div>
     </aside>
   );

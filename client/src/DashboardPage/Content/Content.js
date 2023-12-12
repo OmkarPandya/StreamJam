@@ -8,7 +8,7 @@ import "../dashboardPage.css";
 
 export const Content = ({ channels, getChannels }) => {
   return (
-    <div className="content-container">
+    <div style={{paddingTop:"0px"}} className="content-container">
       <Routes>
         <Route path="settings" element={<Settings />} />
         <Route path="channels" element={<Channels channels={channels} />} />

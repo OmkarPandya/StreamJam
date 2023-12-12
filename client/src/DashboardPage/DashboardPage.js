@@ -26,7 +26,7 @@ export const DashboardPage = () => {
     <div className="dashboard-container row">
       <div className="col-1">
       <Sidebar channels={followedChannels} /></div>
-      <div className="col-11">
+      <div  className="col-11">
       <Content channels={allChannels} getChannels={getChannels} />
       </div>
     </div>
