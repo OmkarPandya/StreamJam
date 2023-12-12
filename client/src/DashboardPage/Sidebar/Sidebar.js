@@ -76,7 +76,7 @@ export const Sidebar = ({ channels }) => {
           </div>
 
 {isLogged ? (
-  <div onClickHandler={handleNavigateToSettings} class="flex flex-col items-center">
+  <div onClick={handleNavigateToSettings} class="flex flex-col items-center">
   <img style={{borderRadius:"50%", width:"60%", marginBottom:"13px"}} src="https://w0.peakpx.com/wallpaper/209/892/HD-wallpaper-bear-pink.jpg">
 
   </img>
