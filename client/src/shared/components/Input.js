@@ -22,7 +22,7 @@ export const Input = ({
   return (
     <>
       <div>
-      <label for="email" className="block mb-2 text-sm font-medium text-gray-900 ">{label}</label>
+      <label for="email" className="block mb-2 text-sm font-medium text-pink-900 ">{label}</label>
 
       </div>
       {textarea ? (
@@ -32,8 +32,8 @@ export const Input = ({
           onChange={handleValueChange}
           onBlur={handleInputBlur}
           rows={5}
-          style={{ maxWidth: "100%" }}
-          class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+          style={{ maxWidth: "100%" , color:"rgb(189, 33, 59)"}}
+          class="border border-gray-300 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-white text-pink-500"
         />
       ) : (
         <input
@@ -41,7 +41,8 @@ export const Input = ({
           value={value}
           onChange={handleValueChange}
           onBlur={handleInputBlur}
-          class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+          style={{color:"rgb(189, 33, 59)"}}
+          class=" border border-gray-300 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-white text-pink-500"
         />
       )}
       <div className="auth-form-validation-message">
